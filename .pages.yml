@@ -6,21 +6,37 @@ media:
 
 content:
   - name: projects
-    label: Портфолио — фотографии проектов
+    label: Каталог и фотографии проектов
     type: file
     path: site/data/projects.json
     format: json
     list: true
+    view:
+      fields: [title, category]
+      primary: title
     fields:
       - name: title
         label: Название проекта
         type: string
+        required: true
       - name: category
-        label: Категория
-        type: string
+        label: Рубрика каталога
+        type: select
+        required: true
+        options:
+          values:
+            - Кухни
+            - Шкафы и гардеробные
+            - Гостиные и ТВ-зоны
+            - Спальни
+            - Прихожие
+            - Мягкая мебель
+            - Школьная мебель
+            - Другое
       - name: image
         label: Фотография проекта
         type: image
+        required: true
         options:
           path: portfolio
           extensions: [jpg, jpeg, png, webp]
@@ -54,4 +70,16 @@ content:
         type: string
       - name: saturdayHours
         label: График Сб
+        type: string
+      - name: corporateName
+        label: Имя контакта — корпусная мебель
+        type: string
+      - name: corporatePhone
+        label: Телефон — корпусная мебель
+        type: string
+      - name: softName
+        label: Имя контакта — мягкая мебель
+        type: string
+      - name: softPhone
+        label: Телефон — мягкая мебель
         type: string
