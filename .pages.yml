@@ -1,0 +1,57 @@
+media:
+  input: site/media
+  output: /media
+  rename: safe
+  categories: [image]
+
+content:
+  - name: projects
+    label: Портфолио — фотографии проектов
+    type: file
+    path: site/data/projects.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Название проекта
+        type: string
+      - name: category
+        label: Категория
+        type: string
+      - name: image
+        label: Фотография проекта
+        type: image
+        options:
+          path: portfolio
+          extensions: [jpg, jpeg, png, webp]
+      - name: description
+        label: Краткое описание
+        type: text
+      - name: alt
+        label: Описание фотографии для доступности
+        type: string
+      - name: year
+        label: Год проекта (необязательно)
+        type: string
+
+  - name: site
+    label: Контакты и подпись
+    type: file
+    path: site/data/site.json
+    format: json
+    fields:
+      - name: address
+        label: Адрес
+        type: string
+      - name: instagram
+        label: Ссылка Instagram
+        type: string
+      - name: instagramHandle
+        label: Имя Instagram
+        type: string
+      - name: weekdayHours
+        label: График Пн–Пт
+        type: string
+      - name: saturdayHours
+        label: График Сб
+        type: string
